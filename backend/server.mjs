@@ -35,6 +35,18 @@ const sampleFunc = async (prompt) => {
   return aiResult.choices[0].message.content?.trim() ; //new
 };
 
+const sampleFunc2 = async (prompt) => {
+  prompt = "" + prompt ;
+  const aiResult = await openai.chat.completions.create({
+    model: "gpt-4",
+    messages: [
+      { role: "system", content: "与えられた指示に対して具体的にわかりやすく。HTMLファイルのみ出力して、その他のコメントは決してしないで。" },
+      { role: "user", content: prompt },
+    ],
+    max_tokens: 2048,
+  });
+  return aiResult.choices[0].message.content?.trim() ; //new
+};
 
 app.post("/send", async(request, response) => {
   const res = await sampleFunc(request.body.email);
