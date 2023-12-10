@@ -1,5 +1,5 @@
 import express from "express";
-import { analyze } from "../api/analyze.mjs";
+import { analyze } from "../openaiApi/analyze.mjs";
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
