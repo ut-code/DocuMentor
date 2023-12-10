@@ -1,8 +1,15 @@
-// import {UserInput as UserInput} from './' //入力情報を取り入れる
-// import {}
+const FirstEvaluationCriteria = "適切な敬語の使用"
+const FirstEvaluationDetail = "尊敬語と謙譲語の使い分けや2重敬語を使っていないかなどに気をつける"
+const SecondEvaluationCriteria ="メール形式が正しいか"
+const SecondEvaluationDetail = "必ず箇条書きで要点を述べるようにする。送り手の名前を必ず記載する。"
+const ThirdEvaluationCriteria = "内容の簡潔性、明瞭性"
+const ThirdEvaluationDetail = "必要な情報が簡潔に述べられているか。必要ない情報が含まれていないか"
+const firstEvaluationPoint = 30;
+const SecondEvaluationPoint = 30;
+const ThirdEvaluationPoint = 20;
 
-
-export const UserPrompt = `
+export function UserPrompt(UserInput){
+    return `
 以下に送るメールサンプルについてその評価をして
 
 #評価基準
@@ -28,9 +35,7 @@ export const UserPrompt = `
 
 
 #メールサンプル
+`+ UserInput +`
 
-`+ UserInput +``
-
-
+`}
 export const SystemPrompt = "jsonの形式でのみで返答して"   //考える必要あり
-export const AssistantPrompt = "" //なし

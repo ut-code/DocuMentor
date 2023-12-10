@@ -7,22 +7,21 @@ const SecondEvaluationDetail = ""
 const ThirdEvaluationCriteria = ""
 const ThirdEvaluationDetail = ""
 
-export const UserPrompt = `
+export function UserPrompt(Criteria1,Criteria2,Criteria3,Detail1,Detail2,Detail3) {return `
 #以下で示される評価基準に対して、評価する際にどの点に気をつけるべきかを詳しく提示して。
 
 #評価基準
-･`+ FirstEvaluationCriteria+`
-    `+ FirstEvaluationDetail+ `
-･`+ SecondEvaluationCriteria+`
-    `+ SecondEvaluationDetail+ `
-･`+ ThirdEvaluationCriteria+`
-    `+ ThirdEvaluationDetail+ `
+･`+ Criteria1+`
+    `+ Detail1+ `
+･`+ Criteria2+`
+    `+ Detail2+ `
+･`+ Criteria3+`
+    `+ Detail3+ `
 
 #
-`
+`//書きかけ
+}
 
 
 
-
-export const SystemPrompt = "あなたはChatGPTの先生です。ChatGPTが理解しやすいよいに返答してください。"   //考える必要あり
-export const AssistantPrompt = "" //なし
+export const SystemPrompt = "あなたはChatGPTの先生です。ChatGPTが理解しやすいよいに返答してください。"   

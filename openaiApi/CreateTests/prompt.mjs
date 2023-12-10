@@ -1,9 +1,3 @@
-// import {UserInput as UserInput} from './' //入力情報を取り入れる
-import { EVALUATION } from "../analysis/main.mjs"
-import {text} from "../teachAI/main.mjs"
-
-const evluation = toString(EVALUATION);
-
 export const UserPrompt = `
 メール文に下った評価について、改善する必要があることにたいし小テストを作って。
 
@@ -28,37 +22,16 @@ export const UserPrompt = `
 [
     {
       "question": "",
-      "choice": {
-        "choice1":"",
-        "choice2":"",
-        "choice3":"",
-        "choice4":"",
-      },
+      "choice": {"","","",""},
       "answer": "",
-      "explanation": {
-        "choice1":"",
-        "choice2":"",
-        "choice3":"",
-        "choice4":"",
-      },
+      "explanation": {"","","",""},
     },
     {
-        "question": "",
-        "choice": {
-          "choice1":"",
-          "choice2":"",
-          "choice3":"",
-          "choice4":"",
-        },
-        "answer": "",
-        "explanation": {
-          "choice1":"",
-          "choice2":"",
-          "choice3":"",
-          "choice4":"",
-        },
-      },
-
+      "question": "",
+      "choice": {"","","",""},
+      "answer": "",
+      "explanation": {"","","",""},
+    },
       //続く
 ]
 `
@@ -67,4 +40,4 @@ export const UserPrompt = `
 
 
 export const SystemPrompt = "小テストについて #outputの形式 で示されたjsonの形式で返答し、それ以外には何も書かないで"   //考える必要あり
-export const AssistantPrompt = "#メール文\n" + UserInput + "\n\n\nに対して\n#評価" + evluation + "\n\nという評価がなされた。" + text
+export function AssistantPrompt(UserInput,evaluation){return "#メール文\n" + UserInput + "\n\n\nに対して\n#評価" + evaluation + "\n\nという評価がなされた。"}
