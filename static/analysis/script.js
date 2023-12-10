@@ -29,5 +29,7 @@ sendButton.onclick = async () => {
     body: new URLSearchParams({ email: message }),
   });
   const data = await response.json();
-  botMessageDiv.textContent = data.message;
+  const parsed = JSON.parse(data.message.replace(/\s+/g, ''));
+  console.log(`${parsed}<-parsed`)
+  botMessageDiv.textContent = parsed.document;
 };
