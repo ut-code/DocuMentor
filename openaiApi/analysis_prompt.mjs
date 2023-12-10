@@ -8,17 +8,17 @@ const firstEvaluationPoint = 30;
 const SecondEvaluationPoint = 30;
 const ThirdEvaluationPoint = 20;
 
-export function UserPrompt(UserInput){
+export function UserPrompt(UserInput,criteria1,criteria2,criteria3,Point1,Point2,Point3,detail1,detail2,detail3){
     return `
 以下に送るメールサンプルについてその評価をして
 
 #評価基準
-･`+ FirstEvaluationCriteria+`(`+firstEvaluationPoint+`点満点)
-    `+ FirstEvaluationDetail+ `
-･`+ SecondEvaluationCriteria+`(`+SecondEvaluationPoint+`点満点)
-    `+ SecondEvaluationDetail+ `
-･`+ ThirdEvaluationCriteria+`(`+ThirdEvaluationPoint+`点満点)
-    `+ ThirdEvaluationDetail+ `
+･`+ criteria1+`(`+Point1+`点満点)
+    `+ detail1+ `
+･`+ criteria2+`(`+Point2+`点満点)
+    `+ detail2+ `
+･`+ criteria3+`(`+Point3+`点満点)
+    `+detail3+ `
 
 以上の３点において、合計１００点満点で評価して。(もし各項目の点数の合計が100点になっていなければ、適切に各項目の配点を変えて)
 その際、それぞれの項目がその点数になった理由と満点でなかった場合は改善点を文章で具体的にわかりやすく書いて。
@@ -38,4 +38,4 @@ export function UserPrompt(UserInput){
 `+ UserInput +`
 
 `}
-export const SystemPrompt = "jsonの形式でのみで返答して"   //考える必要あり
+export const SystemPrompt = "javascriptの連想配列の形式でのみで返答して"   //考える必要あり

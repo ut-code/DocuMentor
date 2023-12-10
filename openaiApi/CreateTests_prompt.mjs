@@ -36,5 +36,5 @@ export const UserPrompt = `
 ]
 `
 
-export const SystemPrompt = "小テストについて #outputの形式 で示されたjsonの形式で返答し、それ以外には何も書かないで"   //考える必要あり
+export const SystemPrompt = "小テストについて #outputの形式 で示された形式で返答し、それ以外には何も書かないで"   //考える必要あり
 export function AssistantPrompt(UserInput,evaluation){return "#メール文\n" + UserInput + "\n\n\nに対して\n#評価" + evaluation + "\n\nという評価がなされた。"}
