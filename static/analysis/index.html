@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Analysis</title>
+    <title>DocuMentor</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>メール文面を入力</h1>
-    <textarea id="email-tarea">テキストエリア</textarea>
-    <button id="send-button">送信</button>
-    <div id="result"></div>
+    <header class="header">DocuMentor</header>
+    <div id="messages">
+      <p>メール文面を入力</p>
+    </div>
+
+    <div class="container">
+      <div id="messages">
+        <!-- Messages will be displayed here -->
+      </div>
+      <div id="result"></div>
+      <div class="chat-area">
+        <div class="input-group">
+          <input type="text" id="message-input" placeholder="Type your message" />
+        </div>
+        <button id="send-button">Send</button>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

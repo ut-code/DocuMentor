@@ -13,10 +13,10 @@ export const AIresponse = async (SystemPrompt,UserPrompt,AssistantPrompt,tempera
     messages: [
       { role: "system", content: SystemPrompt },
       { role: "user", content: UserPrompt },
-      { role: "assistant", content: AssistantPrompt },
+      // { role: "assistant", content: AssistantPrompt },
     ],
     max_tokens: 2048,
-    temperature: temperature,
+    // temperature: temperature,
   });
   return aiResult.choices[0]?.message?.content?.trim() ?? "Sorry, there was an error.";
 }; //AIの回答をだす関数
