@@ -1,18 +1,24 @@
 // import {UserInput as UserInput} from './' //入力情報を取り入れる
+// import {}
 
-const UserInput = `
+
+export const UserPrompt = `
 以下に送るメールサンプルについてその評価をして
 
 #評価基準
-･適切な敬語の使用(30点満点)
-･正しいメール形式(30点満点)
-･内容が簡潔か、明瞭か(20点満点)
+･`+ FirstEvaluationCriteria+`(`+firstEvaluationPoint+`点満点)
+    `+ FirstEvaluationDetail+ `
+･`+ SecondEvaluationCriteria+`(`+SecondEvaluationPoint+`点満点)
+    `+ SecondEvaluationDetail+ `
+･`+ ThirdEvaluationCriteria+`(`+ThirdEvaluationPoint+`点満点)
+    `+ ThirdEvaluationDetail+ `
 
-以上の３点において、合計１００点満点で評価して。またそれぞれの項目がその点数になった理由と改善点を文章で具体的に書いて。
+以上の３点において、合計１００点満点で評価して。(もし各項目の点数の合計が100点になっていなければ、適切に各項目の配点を変えて)
+その際、それぞれの項目がその点数になった理由と満点でなかった場合は改善点を文章で具体的にわかりやすく書いて。
 
 #outputの形式
 [
-    points:{PoliteScore:"", CrrectScore:"", ConciseScore:""}
+    points:{FirstScore:"", SecondScore:"", ThirdScore:""}
     document:""
 ]
 
@@ -23,21 +29,8 @@ const UserInput = `
 
 #メールサンプル
 
-件名：本日のミーティングについて
-cc:吉田、高橋
-bcc:飛鳥
-本文：
-山田様
+`+ UserInput +``
 
-お世話になっております。田中です。
 
-本日の午後３時にミーティングが予定されていますが、私の都合で急遽ご参加できなくなりました。遅い連絡になり申し訳ありません。
-
-ミーティングの内容は後から教えていただきますことは可能でしょうか？
-
-よろしくお願いします。
-
-`
-
-export const UserPrompt = UserInput
 export const SystemPrompt = "jsonの形式でのみで返答して"   //考える必要あり
+export const AssistantPrompt = "" //なし
