@@ -18,5 +18,7 @@ export const AIresponse = async (SystemPrompt,UserPrompt,AssistantPrompt,tempera
     max_tokens: 2048,
     temperature: temperature,
   });
-  return aiResult.choices[0]?.message?.content?.trim() ?? "Sorry, there was an error.";
+  const result =  await aiResult.choices[0]?.message?.content?.trim() ?? "Sorry, there was an error.";
+
+  return result
 }; //AIの回答をだす関数

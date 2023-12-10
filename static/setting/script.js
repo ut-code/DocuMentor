@@ -14,3 +14,4 @@ document.getElementById("setting-button").onclick = async () => {
     }),
   });
 };
+
