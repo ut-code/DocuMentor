@@ -1,52 +1,59 @@
 const response = [
-  {
-    question: "あ？",
-    choice: ["あ", "い", "う", "え"],
-    answer: "あ",
-    explanation: ["あ", "い", "う", "え"],
-  },
-  {
-    question: "いい？",
-    choice: ["いあ", "いい", "いう", "いえ"],
-    answer: "いい",
-    explanation: ["いあ", "いい", "いう", "いえ"],
-  },
+    {
+        "question": "あ？",
+        "choice": ["あ","い","う","え"],
+        "answer": "あ",
+        "explanation": ["あ","い","う","え"],
+    },
+    {
+        "question": "いい？",
+        "choice": ["いあ","いい","いう","いえ"],
+        "answer": "いい",
+        "explanation": ["いあ","いい","いう","いえ"],
+    }
 ];
 
 let i = 0;
-for (const res of response) {
-  const question = document.createElement("h2");
-  const inputContainer = document.createElement("div");
+for(const res of response){
+    const question = document.createElement("h2");
+    const inputContainer = document.createElement("div");
+    
+    question.textContent  = res["question"];
 
-  question.textContent = res["question"];
+    document.getElementById("Qs").appendChild(question);
 
-  document.getElementById("Qs").appendChild(question);
 
-  let j = 0;
-  for (const option of res["choice"]) {
-    const inputLabelPair = document.createElement("div");
-    const input = document.createElement("input");
-    const label = document.createElement("label");
+    let j = 0;
+    for(const option of res["choice"]){
+        //const inputLabelPair = document.createElement("div");
+        const input = document.createElement("input");
+        const label = document.createElement("label");
+    
 
-    input.id = j;
-    input.value = j;
-    input.type = "radio";
-    input.name = i;
 
-    label.innerHTML = option;
-    label.for = j;
+        input.id = j;
+        input.value = j;
+        input.type = "radio";
+        input.name = i;
+        
 
-    inputLabelPair.appendChild(input);
-    inputLabelPair.appendChild(label);
+        label.innerHTML = option;
+        label.for = j;
 
-    inputContainer.appendChild(inputLabelPair);
+        //inputLabelPair.appendChild(input);
+        //inputLabelPair.appendChild(label);
 
-    j++;
+        //inputContainer.appendChild(inputLabelPair)
 
-    document.getElementById("Qs").appendChild(inputContainer);
-  }
+        inputContainer.appendChild(input);
+        inputContainer.appendChild(label);
+//
+        
+        j++;
+        inputContainer.setAttribute("class", "smallquiz");
+    document.getElementById("Qs").appendChild(inputContainer) ;    }
 
-  i++;
+    i++;
 }
 
 // 採点を行う
