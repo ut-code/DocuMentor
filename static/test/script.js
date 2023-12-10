@@ -49,7 +49,20 @@ for (const res of response) {
   i++;
 }
 
+// 採点を行う
 document.getElementById("answer-button").onclick = () => {
-  const selectedValue = document.querySelector('input[name="0"]:checked').value;
-  document.getElementById("sample-p").textContent = `${selectedValue}が選択されているます！`;
+  let sum = 0;
+  for (let i = 0; i < response.length; i++) {
+    const selectedValue = response[i].choice[document.querySelector(
+      `input[name="${i}"]:checked`
+    ).value];
+    console.log(selectedValue, response[i]["answer"])
+    if (selectedValue === response[i]["answer"]) {
+      sum += 1;
+    }
+  }
+  document.getElementById("result").innerHTML = 
+  `<p>あなたの点数は ${sum} / ${response.length} 点です。</p>
+   <a href="/analysis">再度分析を行う</a>
+  `;
 };
