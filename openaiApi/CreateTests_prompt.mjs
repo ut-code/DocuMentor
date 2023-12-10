@@ -19,21 +19,8 @@ export const UserPrompt = `
     ･それぞれの選択肢を選んだ場合について、解説を作る
 
 #outputの形式
-[
-    {
-      "question": "",
-      "choice": ["","","",""],
-      "answer": "",
-      "explanation": {"","","",""},
-    },
-    {
-      "question": "",
-      "choice": ["","","",""],
-      "answer": "",
-      "explanation": {"","","",""},
-    },
-      //続く
-]
+jsonの配列の形式で返答すること。以下は例だがこれを参考にしすぎず、正しくパースできるJSONで返答すること。
+[{"question":"","choice":["","","",""],"answer":"","explanation":{"":"","":"","":"","":""},},{"question":"","choice":["","","",""],"answer":"","explanation":{"":"","":"","":"","":""},},]
 `
 
 export const SystemPrompt = "小テストについて #outputの形式 で示されたjsonの形式で返答し、それ以外には何も書かないで"   //考える必要あり

@@ -52,13 +52,19 @@ app.post("/send-email", async (request, response) => {
 
     const message = await AIresponse(SystemPromptforanalysis,UserPromptforanalysis(email),tips,0)
     Quiz = await AIresponse(SystemPromptforCreateTests,UserPromptforCreateTests,AssistantPrompt(email,message),0.9)
-
+    console.log(`Quiz: ${Quiz}`)
     response.json({ message: message });
   } catch (error) {
     response.json({ message: `エラーが発生しました。${error.message}` });
   }
 });
 
-export const Problem = Quiz;//これをつなげる
-app.listen(3000);
+const getQuizInfo = () => {
+  return Quiz;
+}
 
+app.get("/get-quiz-info", (request, response) => {
+  response.json({ message: getQuizInfo() });
+})
+
+app.listen(3000);
