@@ -1,8 +1,8 @@
 import express from "express";
 import { AIresponse } from "../openaiApi/main.mjs";
-import { SystemPrompt as SystemPromptforanalysis,UserPrompt as UserPromptforanalysis} from "../openaiApi/analysis/prompt.mjs";
-import { SystemPrompt as SystemPromptforCreateTests,UserPrompt as UserPromptforCreateTests, AssistantPrompt} from "../openaiApi/CreateTests/prompt.mjs";
-import { SystemPrompt as SystemPromptforteachAI,UserPrompt as UserPromptforteachAI} from "../openaiApi/teachAI/prompt.mjs";
+import { SystemPrompt as SystemPromptforanalysis,UserPrompt as UserPromptforanalysis} from "../openaiApi/analysis_prompt.mjs";
+import { SystemPrompt as SystemPromptforCreateTests,UserPrompt as UserPromptforCreateTests, AssistantPrompt} from "../openaiApi/CreateTests_prompt.mjs";
+import { SystemPrompt as SystemPromptforteachAI,UserPrompt as UserPromptforteachAI} from "../openaiApi/teachAI_prompt.mjs";
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
