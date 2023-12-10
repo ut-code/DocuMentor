@@ -18,7 +18,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("static"));
 
-let tips = "";
+
+let tips ="";
+let Quiz ="";
+
 
 app.post("/setting", async (request, response) => {
   try {
@@ -46,22 +49,16 @@ app.post("/setting", async (request, response) => {
 app.post("/send-email", async (request, response) => {
   try {
     const email = request.body.email;
-    const message = await AIresponse(
-      SystemPromptforanalysis,
-      UserPromptforanalysis(email),
-      tips,
-      0
-    );
+
+    const message = await AIresponse(SystemPromptforanalysis,UserPromptforanalysis(email),tips,0)
+    Quiz = await AIresponse(SystemPromptforCreateTests,UserPromptforCreateTests,AssistantPrompt(email,message),0.9)
+
     response.json({ message: message });
   } catch (error) {
     response.json({ message: `エラーが発生しました。${error.message}` });
   }
 });
 
-app.post("/score-test", (request, response) => {
-  
-})
-
+export const Problem = Quiz;//これをつなげる
 app.listen(3000);
 
-//createtestのtemperatureは0．9

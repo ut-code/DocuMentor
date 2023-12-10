@@ -1,17 +1,5 @@
-const response = [
-    {
-        "question": "あ？",
-        "choice": ["あ","い","う","え"],
-        "answer": "あ",
-        "explanation": ["あ","い","う","え"],
-    },
-    {
-        "question": "いい？",
-        "choice": ["いあ","いい","いう","いえ"],
-        "answer": "いい",
-        "explanation": ["いあ","いい","いう","いえ"],
-    }
-];
+import { Problem as response } from "../../backend/server.mjs";
+
 
 let i = 0;
 for(const res of response){
