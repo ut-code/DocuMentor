@@ -4,52 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>設定</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- TODO: 合計100になるようにバリデーション -->
+    <div class="main">
+<!-- TODO: 合計100になるようにバリデーション -->
     <h1>設定</h1>
     <p>評価基準を3つ設定しましょう。</p>
+
+    <h2>満点：<span id="score-value"></span>点</h2>
+    <!-- score-valueに配点の合計の和を求めるイベントを作成したいのですが、方法がわかりませんでした。 -->
     <h2>評価基準1</h2>
     <div>
       <label for="criterion1">評価基準1</label>
       <input type="text" id="criterion1" />
     </div>
     <div>
-      <label for="description1">具体的な評価方法や重視する項目</label>
-      <input type="text" id="description1" />
+        <label for="allocation1">配点</label>
+        <input type="number" id="allocation1" />
     </div>
     <div>
-      <label for="allocation1">配点</label>
-      <input type="number" id="allocation1" />
+      <label for="description1">具体的な評価方法や重視する項目(任意です。できるだけ多く書いてください。)</label>
+      <input class="any" type="text" id="description1" />
     </div>
+
     <h2>評価基準2</h2>
     <div>
       <label for="criterion2">評価基準2</label>
       <input type="text" id="criterion2" />
     </div>
     <div>
-      <label for="description2">具体的な評価方法や重視する項目</label>
-      <input type="text" id="description2" />
+        <label for="allocation2">配点</label>
+        <input type="number" id="allocation2" />
     </div>
     <div>
-      <label for="allocation2">配点</label>
-      <input type="number" id="allocation2" />
+      <label for="description2">具体的な評価方法や重視する項目(任意です。できるだけ多く書いてください。)</label>
+      <input class="any" type="text" id="description2" />
     </div>
+
     <h2>評価基準3</h2>
     <div>
       <label for="criterion3">評価基準3</label>
       <input type="text" id="criterion3" />
     </div>
     <div>
-      <label for="description3">具体的な評価方法や重視する項目</label>
-      <input type="text" id="description3" />
+      <label for="allocation3">配点</label>
+      <input  type="number" id="allocation3" />
     </div>
     <div>
-      <label for="allocation3">配点</label>
-      <input type="number" id="allocation3" />
+        <label for="description3">具体的な評価方法や重視する項目(任意です。できるだけ多く書いてください。)</label>
+        <input class="any" type="text" id="description3" />
     </div>
     <button id="setting-button">完了</button>
+    </div>
+    
     <script src="./script.js"></script>
   </body>
 </html>
