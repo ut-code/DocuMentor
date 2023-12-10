@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メール文面 :  </h1>
+    <tag></tag><!--入力されたメールの文面を原文のまま出力-->
+
+    <h1> 添削：</h1>
+    <tag></tag><!--使用した評価基準を表示-->
+
+    <ol>
+        <li></li><!--評価基準１の点数を理由とともに明示-->
+        <li></li><!--評価基準２の点数を理由とともに明示-->
+        <li></li><!--評価基準３の点数を理由とともに明示-->
+        <li></li><!--評価基準４の点数を理由とともに明示-->
+    </ol>
+
+    <tag></tag><!--総合的な評価-->
+
+    <form method="post" action="/send">
+
+      <table border=”1″ width=”300″>
+        <tr>
+            <th>評価基準１</th>
+            <th>評価基準２</th>
+            <th>評価基準３</th>
+            <th>評価基準４</th>
+        </tr>
+        <tr>
+            <td name="ev1"></td><!--評価基準１による点数を半角数字で出力-->
+            <td name="ev2"></td><!--評価基準２による点数を半角数字で出力-->
+            <td name="ev3"></td><!--評価基準３による点数を半角数字で出力-->
+            <td name="ev4"></td><!--評価基準４による点数を半角数字で出力-->
+        </tr>
+      </table>
+
+      <button>小テストへ</button>
+    </form>
+    
+  </body>
+</html>
